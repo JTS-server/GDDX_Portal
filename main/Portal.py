@@ -3,8 +3,21 @@ import hashlib
 import urllib
 import urllib2
 import json
-
+from __future__ import division
 import data
+import sys
+
+if sys.version_info[0] == 3:
+    from importlib import abc
+else:
+    from importlib2 import abc
+try:
+    from importlib import abc
+except ImportError:
+    from importlib2 import abc
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 
 def getVerifyCodeString():
 	timestamptmp=(long)(time.time()*1000)
